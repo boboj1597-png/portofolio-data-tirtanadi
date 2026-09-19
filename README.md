@@ -24,7 +24,7 @@
 
 Saya adalah mahasiswa aktif semester 6 Program Studi Informatika (PJJ) di **Universitas Insan Cita Indonesia (UICI)** dengan dedikasi tinggi dalam pengolahan data, automasi ETL, dan analisis bisnis operasional.
 
-Saya memiliki pemahaman mendalam dalam pemodelan database relasional / SQL, manipulasi time series dengan Python Pandas, data quality profiling, serta visualisasi data bisnis berbasis standar industri data analytics. 
+Saya memiliki pemahaman mendalam dalam pemodelan database relasional atau SQL, manipulasi time series dengan Python Pandas, data quality profiling, serta visualisasi data bisnis berbasis standar industri data analytics. 
 
 **Tujuan Penempatan Magang:**
 Mengimplementasikan keahlian data analytics dan data administration untuk mendukung operasional Perumda Tirtanadi khususnya Instalasi Pengolahan Air (IPA) Sunggal, Medan pada bidang:
@@ -79,7 +79,7 @@ Mengimplementasikan keahlian data analytics dan data administration untuk menduk
   - Menghitung standar dosis ideal berdasarkan acuan kurva laboratorium dalam satuan industri (ppm = gram/m³).
   - Mengkalkulasi selisih konsumsi harian dan mengalikan dengan harga bahan kimia industri (Rp 6.500/kg).
 * **Hasil & Dampak Bisnis:**
-  - Mengidentifikasi inefisiensi dosis koagulan sebesar **20.165 kg PAC/bulan** dengan potensi penghematan biaya produksi mencapai **Rp 131.074.515 / bulan**.
+  - Mengidentifikasi inefisiensi dosis koagulan sebesar **20.165 kg PAC/bulan** dengan potensi penghematan biaya produksi mencapai **Rp 131.074.515/bulan**.
   - Mengungkapkan bahwa **Shift 2 Sore** memiliki deviasi dosis berlebih tertinggi (Rp 46,5 Juta), yang menjadi dasar rekomendasi perbaikan kalibrasi kran berkala dan briefing kepatuhan SOP Jar Test bagi operator shift.
 
 ---
