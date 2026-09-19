@@ -1,6 +1,6 @@
 """
 Pipeline Simulasi & Analisis Data Operasional IPA Sunggal - Perumda Tirtanadi
-Fokus: Rekonsiliasi neraca air, deteksi anomali plant loss, dan audit biaya koagulan (PAC).
+Rekonsiliasi neraca air, deteksi anomali plant loss, dan audit biaya koagulan (PAC).
 """
 
 import pandas as pd
@@ -35,22 +35,22 @@ def generate_ipa_sunggal_dataset(days=30):
     
     ph_values = 7.2 + np.random.normal(0, 0.2, n)
 
-    # Siklus rutin pencucian saringan pasir cepat (backwash 2x sehari: jam 01:00 & 13:00)
+    # Siklus rutin pencucian saringan pasir cepat
     is_backwash = [1 if dt.hour in [1, 13] else 0 for dt in date_range]
 
-    # Batas kehilangan air wajar (plant loss normal 2.5% - 3.8%)
+    # Batas kehilangan air wajar
     normal_loss_pct = np.random.uniform(0.025, 0.038, n)
     outflow = base_inflow * (1 - normal_loss_pct)
     for i in range(n):
         if is_backwash[i] == 1:
             outflow[i] -= 380
             
-    # Simulasi anomali kebocoran pipa / overflow reservoir
+    # Simulasi anomali kebocoran pipa
     for i, dt in enumerate(date_range):
         if dt.day == 19 and 4 <= dt.hour <= 10:
             outflow[i] -= 650
 
-    # Standar dosis ideal Jar Test laboratorium: ppm = gram PAC / m³ air baku
+    # Standar dosis ideal Jar Test laboratorium: ppm = gram PAC/m³ air baku
     ideal_ppm = 12.0 + (0.16 * base_ntu)
     operator_bias = np.random.normal(1.08, 0.08, n)
     actual_ppm = ideal_ppm * operator_bias
@@ -93,7 +93,7 @@ def flag_water_anomaly(row):
 
 df_raw['status_neraca_air'] = df_raw.apply(flag_water_anomaly, axis=1)
 
-# Estimasi harga pengadaan bahan kimia koagulan (PAC) industri per kg
+# Estimasi harga pengadaan bahan kimia koagulan PAC industri per kg
 HARGA_PAC_PER_KG = 6500.0
 
 df_raw['pac_waste_kg'] = np.maximum(0, df_raw['pac_used_kg'] - df_raw['pac_ideal_kg'])
